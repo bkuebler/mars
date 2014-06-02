@@ -14,3 +14,10 @@ kernel/mars_config.h
 *.bak
 *alternate*.conf
 *internal*.conf
+
+# Debian Maintain files
+debian/mars-utils/
+debian/marslight-dkms/
+debian/*.debhelper*
+debian/*.substvars
+debian/files

@@ -1,0 +1,4 @@
+userspace/marsadm sbin
+userspace/marsadm.8 usr/share/man/man8
+contrib/monitoring/mars-status sbin
+contrib/monitoring/mars-status.8 usr/share/man/man8

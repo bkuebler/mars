@@ -1,0 +1,8 @@
+PACKAGE_NAME="marslight"
+PACKAGE_VERSION="#MODULE_VERSION#"
+CLEAN="cd kernel; make clean KDIR=/lib/modules/${kernelver}/build"
+MAKE[0]="cd kernel; make KDIR=/lib/modules/${kernelver}/build"
+BUILT_MODULE_NAME[0]="mars"
+BUILT_MODULE_LOCATION[0]="kernel"
+DEST_MODULE_LOCATION[0]="/kernel/block"
+AUTOINSTALL="yes"

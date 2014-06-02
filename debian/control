@@ -1,0 +1,40 @@
+Source: marslight
+Section: misc
+Priority: optional
+Maintainer: Benjamin Kübler <benjamin.kuebler@1und1.de>
+Build-Depends: debhelper (>= 8), dkms
+Standards-Version: 3.9.2
+Homepage: https://schoebel.github.io/mars/
+Vcs-Git: git://github.com/schoebel/mars.git
+Vcs-Browser: https://github.com/schoebel/mars
+
+Package: marslight-dkms
+Architecture: amd64
+Depends: linux-image-mars, dkms, ${misc:Depends}
+Recommends: linux-headers
+Provides: marslight
+Description: MARSlight module in DKMS format.
+ MARS Light is a block-level storage replication system for long distances
+ / flaky networks under GPL. It runs as a Linux kernel module. The sysadmin
+ interface is similar to other distributed block-level replications, but its
+ internal engine is completely different. It works with transaction logging,
+ similar to some database systems.
+ .
+ Therefore, MARS Light can provide stronger consistency guarantees. Even
+ in case of network bottlenecks / problems / failures, the secondaries may 
+ become outdated (reflect an elder state), but never become inconsistent.
+ In contrast to DRBD, MARS Light preserves the order of write operations even
+ when the network is flaky (Anytime Consistency). The current version of 
+ MARS Light works asynchronously. Therefore, application performance is 
+ completely decoupled from any network problems. Future versions are planned 
+ to also support synchronous or near-synchronous modes.
+
+Package: mars-utils
+Architecture: all
+Depends: marslight | mars
+Description: utilities to manage MARS
+ MARS and MARSlight is a block-level storage replication system for
+ long distances / flaky networks under GPL.
+ .
+ This package contains all utils to manage MARS successfully.
+
